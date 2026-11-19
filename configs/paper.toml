@@ -1,0 +1,48 @@
+[vision]
+image_size = 224
+patch_size = 16
+width = 768
+depth = 12
+heads = 12
+
+[training]
+epochs = 100
+lr = 1.5e-5
+betas = [0.9, 0.999]
+eps = 1e-8
+weight_decay = 0.03
+focal_alpha = 0.25
+focal_gamma = 2.0
+seed = 42
+
+[instance]
+batch_size = 256
+mask_ratio = 0.70
+temperature = 0.1
+ema_momentum = 0.996
+contrastive_weight = 1.0
+position_weight = 1.0
+mim_weight = 1.0
+
+[prototype]
+batch_size = 128
+alpha = 1e-4
+beta = 1e-4
+update_lr = 0.01
+stability = true
+
+[diagnosis]
+batch_size = 128
+fusion_width = 256
+fusion_heads = 8
+fusion_depth = 2
+queries = 8
+text_length = 256
+
+[ot]
+clusters = 16
+projection_width = 64
+iterations = 50
+regularization = 0.1
+threshold = 0.05
+fit_samples = 128
